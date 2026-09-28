@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@500;800&family=Public+Sans:wght@400;600&display=swap");
+
+:root {
+  --paper: #f2f4f3;
+  --ink: #1c2a32;
+  --steel: #56676f;
+  --tape: #f0b400;
+  --line: #cfd6d9;
+  --card: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #151d22;
+    --ink: #eef1f2;
+    --steel: #9fb0b8;
+    --line: #2c3a42;
+    --card: #1d282e;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-padding-top: 1rem; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1.05rem/1.65 "Public Sans", system-ui, sans-serif;
+}
+h1, h2, h3 {
+  font-family: "Archivo", "Arial Narrow", sans-serif;
+  font-weight: 800;
+  line-height: 1.05;
+  margin: 0 0 .5em;
+}
+h1 { font-size: clamp(2.6rem, 8vw, 5.5rem); letter-spacing: -.02em; }
+h2 { font-size: clamp(1.6rem, 4vw, 2.4rem); }
+h3 { font-size: 1.3rem; }
+a { color: inherit; text-underline-offset: 3px; }
+a:focus-visible { outline: 3px solid var(--tape); outline-offset: 3px; }
+.wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.25rem; }
+
+/* header with tape-measure ticks */
+header.site {
+  border-bottom: 3px solid var(--tape);
+  position: relative;
+}
+header.site::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: -13px; height: 10px;
+  background: repeating-linear-gradient(90deg, var(--steel) 0 1px, transparent 1px 12px);
+  opacity: .5;
+}
+header.site .wrap {
+  display: flex; flex-wrap: wrap; gap: .5rem 2rem;
+  align-items: center; justify-content: space-between; padding-block: 1rem;
+}
+.brand { font: 800 1.25rem "Archivo", sans-serif; text-decoration: none; }
+nav a { margin-left: 1.25rem; text-decoration: none; font-weight: 600; }
+nav a:hover, nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--tape); text-decoration-thickness: 3px; }
+
+main { padding: 4rem 0 5rem; }
+.lede { font-size: 1.25rem; max-width: 36rem; color: var(--steel); }
+.btn {
+  display: inline-block; margin-top: 1rem; padding: .8rem 1.4rem;
+  background: var(--tape); color: #1c2a32; font-weight: 600;
+  text-decoration: none; border-radius: 3px;
+}
+.btn:hover { filter: brightness(1.08); }
+
+/* landing */
+.hero { display: grid; gap: 2.5rem; }
+@media (min-width: 52rem) { .hero { grid-template-columns: 1.1fr 1fr; align-items: center; } }
+.hero img, .ph {
+  width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+  background: var(--line); border-radius: 3px;
+}
+.strip { display: grid; gap: 1.5rem; margin-top: 4rem; }
+@media (min-width: 40rem) { .strip { grid-template-columns: repeat(3, 1fr); } }
+.strip div { border-top: 3px solid var(--ink); padding-top: .75rem; }
+.strip p { margin: 0; color: var(--steel); }
+
+/* projects */
+.project { margin-top: 4rem; }
+.project .meta { color: var(--steel); margin: 0 0 1rem; }
+.pair { display: grid; gap: 1rem; }
+@media (min-width: 40rem) { .pair { grid-template-columns: 1fr 1fr; } }
+figure { margin: 0; }
+figcaption { font-size: .9rem; color: var(--steel); margin-top: .4rem; }
+.project > p { max-width: 42rem; }
+
+/* contact */
+.contact dl { display: grid; grid-template-columns: max-content 1fr; gap: .75rem 2rem; margin: 2rem 0; }
+.contact dt { font-weight: 600; color: var(--steel); }
+.contact dd { margin: 0; }
+
+footer.site { border-top: 1px solid var(--line); padding: 1.5rem 0; color: var(--steel); font-size: .9rem; }
