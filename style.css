@@ -20,15 +20,16 @@ header.site .wrap {
   align-items: center; justify-content: space-between; padding-block: 1rem;
 }
 .brand { font-weight: 700; font-size: 1.2rem; text-decoration: none; }
-nav a { margin-left: 1.25rem; }
+nav { display: flex; flex-wrap: wrap; gap: 0 .25rem; }
+nav a { display: inline-block; padding: .8rem .75rem; min-height: 44px; }
 nav a[aria-current="page"] { text-decoration: none; font-weight: 700; }
 
 main { padding: 3rem 0 4rem; }
 .lede { color: var(--gray); }
-.btn { display: inline-block; margin-top: 1rem; padding: .6rem 1.2rem; border: 1px solid var(--ink); text-decoration: none; }
+.btn { display: inline-block; margin-top: 1rem; padding: .8rem 1.4rem; min-height: 44px; border: 1px solid var(--ink); text-decoration: none; }
 .btn:hover { background: var(--ink); color: #fff; }
 
-img, .ph { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; background: #eee; }
+img, .ph { width: 100%; height: auto; display: block; background: #eee; }
 .hero img { margin-top: 2rem; }
 .strip { margin-top: 3rem; }
 .strip div { margin-bottom: 1.5rem; }
